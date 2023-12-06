@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "Baixant font"
+echo "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip"
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip
+unzip 0xProto.zip -d ~/.fonts
+fc-cache -fv
+echo "font instalada"
+echo "instalant zsh"
+
+sudo apt install zsh -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim tmux
